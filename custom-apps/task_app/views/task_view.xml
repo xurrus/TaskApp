@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="task_app.task_model_form">
+            <field name="name">Task Form</field>
+            <field name="model">task_app.task_model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="isdone" />
+                            <field name="active" />
+                            <field name="category"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="task_app.task_model_list">
+            <field name="name">Task List</field>
+            <field name="model">task_app.task_model</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="active == True">
+                    <field name="name" />
+                    <field name="isdone" />
+                    <field name="active" />
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="task_app.action_window_task_list">
+            <field name="name">Task List</field>
+            <field name="res_model">task_app.task_model</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
